@@ -1,17 +1,13 @@
 {
-    "name": "simplesamlphp/simplesamlphp-module-authtwitter",
-    "description": "A module that is able to perform authentication against Twitter",
+    "name": "swcc/simplesamlphp-module-authdiscourse",
+    "description": "A module that is able to perform authentication against a Discourse server",
     "type": "simplesamlphp-module",
-    "keywords": ["simplesamlphp", "twitter"],
-    "license": "LGPL-2.1-or-later",
+    "keywords": ["simplesamlphp", "discourse"],
+    "license": "GPL-3.0-or-later",
     "authors": [
         {
-            "name": "Olav Morken",
-            "email": "olavmrk@gmail.com"
-        },
-        {
-            "name": "Tim van Dijen",
-            "email": "tvdijen@gmail.com"
+            "name": "Paul Bonaud",
+            "email": "paul+gh@bonaud.fr"
         }
     ],
     "config": {
@@ -22,7 +18,7 @@
     },
     "autoload": {
         "psr-4": {
-            "SimpleSAML\\Module\\authtwitter\\": "lib/"
+            "SimpleSAML\\Module\\authdiscourse\\": "lib/"
         }
     },
     "autoload-dev": {
@@ -34,14 +30,13 @@
         "php": ">=7.2",
         "simplesamlphp/composer-module-installer": "~1.0",
         "simplesamlphp/simplesamlphp": "dev-master",
-        "simplesamlphp/simplesamlphp-module-oauth": "~1.0",
         "webmozart/assert": "^1.4"
     },
     "require-dev": {
         "simplesamlphp/simplesamlphp-test-framework": "^0.1.0"
     },
     "support": {
-        "issues": "https://github.com/simplesamlphp/simplesamlphp-module-authtwitter/issues",
-        "source": "https://github.com/simplesamlphp/simplesamlphp-module-authtwitter"
+        "issues": "https://github.com/swcc/simplesamlphp-module-authdiscourse/issues",
+        "source": "https://github.com/swcc/simplesamlphp-module-authdiscourse"
     }
 }

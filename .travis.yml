@@ -126,7 +126,3 @@ jobs:
         - composer update
       script:
         - vendor/bin/phpcs
-
-notifications:
-  slack:
-    secure: h5YiO7tAk5bzAQBkUZ3crnOFAOBkNqHp0nc2cxvGauogVfCLE9K8bME512uTeu9QWMht2D30uyTOHFKQ7sPEW4omHNF4qYl4p9L037oQFfEwZPBzJFo9QUzviT3mvKHTN4HSQOkq/08ZoMhh1i3p/OhyFS56J28IDJWDqGZkEUE=
