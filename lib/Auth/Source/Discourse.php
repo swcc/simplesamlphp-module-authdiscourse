@@ -70,14 +70,12 @@ class Discourse extends Auth\Source
      * @param array &$state  Information about the current authentication.
      * @return void
      */
-    public function authenticate(&$state)
+    public function authenticate(array &$state): void
     {
-        assert(is_array($state));
-
         // We are going to need the authId in order to retrieve this authentication source later
         $state[self::AUTHID] = $this->authId;
 
-        $nonce = hash('sha512', mt_rand());
+        $nonce = hash('sha512', (string) mt_rand());
         $state['authdiscourse:nonce'] = $nonce;
 
         $stateID = Auth\State::saveState($state, self::STAGE_INIT);
@@ -123,7 +121,7 @@ class Discourse extends Auth\Source
         }
 
         // validate sso
-        if(hash_hmac('sha256', urldecode($sso), $this->secret) !== $sig){
+        if (hash_hmac('sha256', urldecode($sso), $this->secret) !== $sig) {
             throw new Error\NotFound();
         }
 
@@ -132,7 +130,7 @@ class Discourse extends Auth\Source
         parse_str(base64_decode($sso), $query);
 
         // verify nonce with generated nonce during authenticate function
-        if($query['nonce'] != $state['authdiscourse:nonce']){
+        if ($query['nonce'] != $state['authdiscourse:nonce']) {
             throw new Error\NotFound();
         }
 
