@@ -102,9 +102,8 @@ class Discourse extends Auth\Source
         $discourseSsoUrl = $this->url . "/session/sso_provider?$query";
 
         // Redirect user to Discourse SSO
-	$httpUtils = new Utils\HTTP();
-	$httpUtils->redirectTrustedURL($discourseSsoUrl);
-	
+        $httpUtils = new Utils\HTTP();
+        $httpUtils->redirectTrustedURL($discourseSsoUrl);
     }
 
 
