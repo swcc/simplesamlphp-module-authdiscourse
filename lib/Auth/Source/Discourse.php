@@ -70,7 +70,7 @@ class Discourse extends Auth\Source
      * @param array &$state  Information about the current authentication.
      * @return void
      */
-    public function authenticate(&$state)
+    public function authenticate(array &$state): void
     {
         assert(is_array($state));
 
@@ -102,7 +102,8 @@ class Discourse extends Auth\Source
         $discourseSsoUrl = $this->url . "/session/sso_provider?$query";
 
         // Redirect user to Discourse SSO
-        Utils\HTTP::redirectTrustedURL($discourseSsoUrl);
+        $httpUtils = new Utils\HTTP();
+        $httpUtils->redirectTrustedURL($discourseSsoUrl);
     }
 
 
